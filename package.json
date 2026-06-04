@@ -1,0 +1,21 @@
+{
+  "name": "knowforge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered knowledge base - compile knowledge, not just store it",
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter @knowforge/server dev\" \"pnpm --filter @knowforge/web dev\"",
+    "dev:server": "pnpm --filter @knowforge/server dev",
+    "dev:web": "pnpm --filter @knowforge/web dev",
+    "build": "pnpm --filter @knowforge/shared build && pnpm --filter @knowforge/server build && pnpm --filter @knowforge/web build",
+    "build:server": "pnpm --filter @knowforge/server build",
+    "build:web": "pnpm --filter @knowforge/web build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm --filter @knowforge/server test",
+    "clean": "rm -rf apps/server/dist apps/web/dist packages/shared/dist apps/server/node_modules apps/web/node_modules packages/shared/node_modules node_modules"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.4.5"
+  }
+}
